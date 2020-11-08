@@ -1,0 +1,31 @@
+@import "lib/vars";
+@import "lib/reboot";
+@import "lib/keyframes";
+
+@import "lib/colors";
+@import "lib/typo";
+@import "lib/utils";
+
+@import "partials/layout";
+@import "partials/modals";
+
+@import "partials/pages/main";
+@import "partials/pages/menu";
+@import "partials/pages/pages";
+@import "partials/pages/splash";
+
+@import "partials/components/lboard";
+@import "partials/components/toggle";
+@import "partials/components/settings";
+
+:root {
+    --color_1: #{map-get($themes, "color_1")};
+    --color_2: #{map-get($themes, "color_2")};
+    --color_3: #{map-get($themes, "color_3")};
+    --color_4: #{map-get($themes, "gray")};
+    --color_5: #{map-get($themes, "grayLight")};
+}
+
+* {
+    backface-visibility: hidden;
+}

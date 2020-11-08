@@ -1,0 +1,166 @@
+$colorBase: #333;
+$colorCorporate: rgb(223, 56, 83);
+$colorCorporateHover: rgb(176, 30, 55);
+
+$module: .5rem;
+
+#menu_page {
+
+    #butInstall {
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        text-decoration: none;
+        margin: 2px;
+        color: white;
+        border: 1px solid;
+        @extend .bg_colorGrayLight;
+        @extend .border_colorGrayLight;
+        height: 20px;
+        font-size: 9px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: ease-in 0.2s all;
+        padding: 0 8px 0 8px;
+   
+    }
+    
+    .header {
+        padding: $base * 2;
+        flex: 0 0 auto;
+    }
+
+    .slider {
+        flex: 1 1 100%;
+        height: 250px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .slider_items {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+
+            .slider_item {
+                max-width: 30%;
+                text-align: center;
+
+                img {
+                    height: 120px;
+                    width: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+        }
+    }
+
+    #extraAnimation {
+        color: white;
+        border: 3px solid;
+        @extend .bg_colorGray;
+        @extend .border_colorGray;
+
+        display: inline-block;
+        font-size: inherit;
+        border: 0;
+        margin-top: $module;
+        padding: $module;
+        outline: none;
+        
+        transform: scale(1) rotate(0deg);
+        transition: all 350ms ease 200ms;
+        
+        &:hover {
+            color: white;
+            border: 3px solid;
+            @extend .bg_colorGrayLight;
+            @extend .border_colorGrayLight;
+            
+            outline: none;
+            
+            transform: scale(1.4) rotate(360deg);
+            transition: all 350ms ease 200ms;
+        }
+    }
+
+    .footer {
+        padding: $base * 2;
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+
+        .form_group {
+
+        }
+
+        .foot_navigation {
+            margin-top: $base * 4;
+
+            li a {
+                display: flex;
+                flex-direction: column;
+
+                .mdi {
+                    font-size: 1.1rem;
+                }
+
+                .label {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+
+svg {
+    .Char_01 {
+        width: 100px;
+        height: 100px;
+        .bg {
+            fill: white;
+            stroke: black;
+            stroke-width: 2px;
+            fill-opacity: 0;
+            stroke-dasharray: 1760px;
+            stroke-dashoffset: 1760px;
+            transition-property: fill-opacity, stroke-dashoffset;
+            transition-duration: 350ms;
+            transition-timing-function: ease;
+            transition-delay: 700ms, 1000ms;
+
+        }
+        .char_01 {
+            fill: #67F2D9;
+            opacity: 0;
+            transform: translateY(50px);
+            transition-property: opacity transform;
+            transition-duration: 350ms;
+            transition-timing-function: ease;
+            transition-delay: 0;
+        }
+    }
+
+    &.active {
+        .Char_01 {
+            .bg {
+                fill-opacity: 1;
+                stroke-dashoffset: 0;
+                transition-property: fill-opacity, stroke-dashoffset;
+                transition-duration: 350ms, 350ms;
+                transition-timing-function: ease, ease;
+                transition-delay: 550ms, 0;
+            }
+            .char_01 {
+                fill: #67F2D9;
+                opacity: 1;
+                transform: translateY(0px);
+                transition-property: opacity transform;
+                transition-duration: 350ms;
+                transition-timing-function: ease;
+                transition-delay: 1250ms;
+            }
+        }
+    }
+}

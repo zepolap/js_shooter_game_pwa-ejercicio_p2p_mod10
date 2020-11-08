@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#fafafa" />
+
+    <title>Shooter Game</title>
+    <link rel="manifest" href="assets/manifest.json">
+    <meta name="description" content="Ejercicio P2P MOD10 - transformar app en pwa">
+    <meta name="theme-color" content="#6200ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="js_shooter_game">
+    <link rel="apple-touch-icon" href="assets/icons/char_01_192.png">
+    <link rel="shortcut icon" href="./assets/res/characters/char_01.png" type="image/x-icon">
+
+    <!-- sass compiled -->
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <link href="assets/css/main.css.map" />
+
+    <!-- material icons -->
+    <link type="text/css" rel="stylesheet" href="assets/css/materialdesignicons.css" />
+    <link href="assets/css/materialdesignicons.css.map" />
+
+    <!-- swiperjs -->
+    <link rel="stylesheet" href="app/libs/swiper.css" />
+</head>
+
+<body>
+    <div id="app" class="app">
+
+
+
+
+
+
+        <!-- 
+            SPLASH PAGE
+            
+            Información sobre splash page.
+
+            -->
+        <section id="splash_page" class="full_window">
+            <!-- Splash template -->
+            <h1>Shaped Game!</h1>
+
+           
+              
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            MAIN PAGE
+            
+            Página donde está alojado el juego
+            
+            -->
+        <section id="main_page" class="full_window">
+            <!-- Main page UI -->
+            <div class="ui">
+                <div class="lifes">
+                    <span id="livesli" class="amount">3</span>
+                    <span class="icon">
+                        <span class="mdi mdi-cards-heart"></span>
+                    </span>
+                </div>
+                <div class="score">
+                    <span id="scoreli" class="amount">3</span>
+                    <span class="icon">
+                        <span class="mdi mdi-star"></span>
+                    </span>
+                </div>
+                <div class="pause">
+                    <a href="#modal_pause_window" class="pause_btn" id="pause" navigation-type="modal" animation-type="pause_modal">
+                        <span class="mdi mdi-pause-circle-outline"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- Main page Juego!! -->
+            <div class="game">
+                <!-- Here comes the gameeee!! -->
+            </div>
+        </section>
+
+
+
+    
+        <!-- 
+            VENTANA MODAL PAUSA
+            
+            Ventana modal de pausa
+            
+            -->
+        <section id="modal_pause_window" class="modal_window modal_light">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal settings -->
+                <div class="settings">
+                    <div class="setting">
+                        <div class="setting_icon">
+                            <span class="mdi mdi-volume-high"></span>
+                        </div>
+                        <div class="setting_label">
+                            Background music
+                        </div>
+                        <div class="setting_toggle">
+                            <div class="toggle">
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="setting_icon">
+                            <span class="mdi mdi-music-note-eighth"></span>
+                        </div>
+                        <div class="setting_label">
+                            Action sounds
+                        </div>
+                        <div class="setting_toggle">
+                            <div class="toggle">
+                                <span class="mdi mdi-checkbox-blank-circle"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal ctas -->
+                <a class="btn btn_primary" href="#main_page" navigation-type="modal" animation-type="resume_modal">Back to game</a>
+                <a class="btn btn_secondary" href="#modal_confirm" navigation-type="modal" animation-type="confirm_modal_in">Quit game</a>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- 
+            VENTANA MODAL CONFIRMACIÓN
+            
+            Ventana modal de confirmación
+            
+            -->
+        <section id="modal_confirm" class="modal_window">
+            <!-- modal overlay -->
+            <div class="overlay"></div>
+            <!-- modal holder -->
+            <div class="holder">
+                <!-- modal message -->
+                <div class="message">
+                    If you quit the game, you'll lose all your points.<br />Are
+                    you sure?
+                </div>
+
+                <!-- modal cta -->
+                <div class="cta">
+                    <a class="btn btn_primary" href="#menu_page" navigation-type="animation" animation-type="game_out">Quit</a>
+                    <a class="btn btn_secondary" href="#main_page" navigation-type="modal" animation-type="confirm_modal_out">Cancelar</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div id="swiper_page" class="swiper_section full_window">
+
+            <div class="swiper-wrapper">
+
+            <!-- 
+                PÁGINA DE SETTINGS
+                
+                Página para modificar settings
+                
+                -->
+            <section id="settings_page" class="swiper_item swiper-slide">
+
+                <!-- Settings header -->
+                <header class="header">
+                    <h2>Settings</h2>
+                </header>
+
+                <div class="main">
+                    <!-- Settings settings -->
+                    <div class="settings">
+                        <div class="setting">
+                            <div class="setting_icon">
+                                <span class="mdi mdi-volume-high"></span>
+                            </div>
+                            <div class="setting_label">
+                                Background music
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="setting_icon">
+                                <span class="mdi mdi-music-note-eighth"></span>
+                            </div>
+                            <div class="setting_label">
+                                Action sounds
+                            </div>
+                            <div class="setting_toggle">
+                                <div class="toggle">
+                                    <span class="mdi mdi-checkbox-blank-circle"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <a href="#menu_page" class="btn btn_primary get_back" navigation-type="swipe">Volver al menú</a>
+                </footer>
+            </section>
+
+
+
+
+
+
+            <!-- 
+                MENU PAGE
+                
+                Página de menu
+                
+                -->
+            <section id="menu_page" class="swiper_item swiper-slide">
+                
+                 <!-- Menu page header -->
+                <header class="header">
+                    <button id="butInstall" aria-label="Install" hidden>INSTALAR APLICACION JS_SHOOTER_GAME...</button>
+                    <h1 class="text_center">Shaped Game!</h1 class="text_center">
+                    <h2 class="text_center">get in shape!!</h2>
+                </header>
+
+                <!-- Menu page slider -->
+                <div class="slider">
+                    <div class="slider_items">
+                        <div class="slider_item">
+                            <img src="./assets/res/characters/char_03.png" alt="">
+                        </div>
+
+                        <svg width="104" height="132" viewBox="0 0 104 132">
+                            <g class="Char_01">
+                              <rect width="100.75" height="128.5" x="1.625" y="1.559" fill="#fff" stroke="#000" stroke-width="2" class="bg" rx="17"/>
+                              <g class="char_01">
+                                <path fill="#67F2D9" d="M57.591 17.945c-2.256-4.245-8.34-4.245-10.596 0L21.293 66.302c-2.124 3.996.773 8.816 5.298 8.816h51.404c4.526 0 7.423-4.82 5.298-8.816L57.591 17.945z"/>
+                                <path stroke="#000" stroke-width="2" d="M41.937 76.126v35.422m18.5-35.422v35.422m-18.23-.642l-7.874 5.951m33.793-1.141l-8.25-4.886M43.389 38.636l5.599 6.286m4.837.284l6.104-6.854m-12.776 21.4l4.592-5.245m-1.122-.005l4.671 5.245m-8.299-41.801c2.257-4.246 8.34-4.246 10.596 0L83.293 66.3c2.125 3.996-.772 8.816-5.298 8.816H26.591c-4.526 0-7.422-4.82-5.298-8.816l25.702-48.356zm12.441 26.608c0 .883-.662 1.599-1.478 1.599-.817 0-1.48-.716-1.48-1.6 0-.882.663-1.598 1.48-1.598.816 0 1.478.716 1.478 1.599zm-13.754 0c0 .883-.662 1.599-1.479 1.599-.817 0-1.479-.716-1.479-1.6 0-.882.663-1.598 1.48-1.598.816 0 1.478.716 1.478 1.599z"/>
+                              </g>
+                            </g>
+                        </svg>
+                       
+                        <div class="slider_item">
+                            <img src="./assets/res/characters/char_02.png" alt="">
+                        </div>
+                    </div>
+                   
+                </div>
+            
+                 <!-- Menu page footer -->
+                <footer class="footer">
+                    <div class="form_group">
+                        <button id="extraAnimation">Click for Extra Animation!!!</button>
+                    </div>
+                    <a href="#main_page" class="btn btn_primary" navigation-type="animation" animation-type="menu_to_game">Get started</a>
+                    <div class="foot_navigation">
+                        <ul class="inline_menu centered">
+                            <li>
+                                <a href="#settings_page" navigation-type="swipe">
+                                    <span class="mdi mdi-settings"></span>
+                                    <span class="label">Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#leaderboard_page" navigation-type="swipe">
+                                    <span class="mdi mdi-signal"></span>
+                                    <span class="label">High Scores</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </section>
+
+
+
+
+
+
+
+            <!-- 
+                PÁGINA DE HIGH SCORES
+                
+                Página para meter high scores con PWA
+                
+                -->
+            <section id="leaderboard_page" class="swiper_item swiper-slide">
+                <!-- Leaderboard HighScore -->
+                <section class="hscore">
+                    <header class="header">
+                        <h2>High Score</h2>
+                    </header>
+                    <div class="main">
+                        2014
+                    </div>
+                </section>
+
+                <!-- Leaderboard  -->
+                <section class="lboard">
+                    <header class="header">
+                        <h2>Leaderboard</h2>
+                    </header>
+                    <div class="main">
+                        <div class="lboard_table">
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    LeaderBoard Item
+                                </div>
+                                <div class="lboard_item_p">123</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    LeaderBoard Item
+                                </div>
+                                <div class="lboard_item_p">123</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    LeaderBoard Item
+                                </div>
+                                <div class="lboard_item_p">123</div>
+                            </div>
+                            <div class="lboard_item you">
+                                <div class="lboard_item_name">
+                                    LeaderBoard Item
+                                </div>
+                                <div class="lboard_item_p">123</div>
+                            </div>
+                            <div class="lboard_item">
+                                <div class="lboard_item_name">
+                                    LeaderBoard Item
+                                </div>
+                                <div class="lboard_item_p">123</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Leaderboard back to menu -->
+                <footer class="footer">
+                    <a href="#menu_page" class="btn btn_primary get_back" navigation-type="swipe">Volver al menú</a>
+                    
+                </footer>
+            </section>
+
+            </div> <!-- /swipe_wrapper-->
+        </div> <!-- /swipe_section-->
+
+
+
+
+
+
+
+        <!-- 
+            SPINNER
+            
+            Por si se necesita a la hora de hacer un spinner de carga
+            
+            -->
+        <section id="modal_loading_spinner" class="spinner_window">
+            <!-- Spinner -->
+            <span class="spinner">
+                <div class="mdi mdi-loading mdi-spin"></div>
+            </span>
+        </section>
+
+
+    </div>
+
+    <!-- libs -->
+    <script src="app/libs/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="app/libs/anime.min.js" type="text/javascript"></script>
+
+    <!-- game -->
+    <script src="app/Game/Game.js" type="text/javascript"></script>
+    <script src="app/Game/Entity.js" type="text/javascript"></script>
+    <script src="app/Game/Character.js" type="text/javascript"></script>
+    <script src="app/Game/Player.js" type="text/javascript"></script>
+    <script src="app/Game/Opponent.js" type="text/javascript"></script>
+    <script src="app/Game/Shot.js" type="text/javascript"></script>
+    <script src="app/Game/utils.js" type="text/javascript"></script>
+
+    <!-- ui stuff -->
+    <script src="app/Animations.js" type="text/javascript"></script>
+    <script src="app/Navigation.js" type="text/javascript"></script>
+    <script src="app/UI.js" type="text/javascript"></script>
+
+    <!-- inits -->
+    <script src="app/main.js" type="text/javascript"></script>
+
+    <!-- serviceWorker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((reg) => {
+                  console.log('Service worker registered.', reg);
+                });
+          });
+        }
+      </script>
+    
+    <!-- install -->
+    <script src="assets/install.js"></script>
+
+</body>
+
+</html>
